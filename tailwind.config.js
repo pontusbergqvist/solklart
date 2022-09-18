@@ -13,6 +13,9 @@ module.exports = {
         serif: ['Cambria', 'serif']
       }
     },
+    screens: {
+      'tablet': '640px'
+    }
   },
   plugins: [],
 };

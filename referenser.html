@@ -14,15 +14,22 @@
 <body class="font-body">
     <div class="bg-[#222] text-white">
         <nav class="mx-auto text-lg flex justify-between items-center w-full max-w-[1000px] px-2 py-4">
+                <!-- desktop -->
                 <a href="/">
                     <img src="./small-logo.png" alt="Solklart logo" class="w-[100px]">
                 </a>
-                <div class="flex items-center ml-5 mr-auto font-mono">
+                <div class="items-center ml-5 mr-auto font-mono tablet:flex hidden">
                     <a href="index.html" class="px-2 mx-1 opacity-70">Hem</a>
                     <a href="referenser.html" class="px-2 mx-1">Referenser</a>
                     <p class="px-2 mx-1 opacity-70">Om oss</p>
                 </div>
-                <button class="border-b-2 ml-10 border-b-[#e7d161] text-[16px] text-white">Gör en intresseanmälan</button>
+                <button class="tablet:block hidden border-b-2 ml-10 border-b-[#e7d161] text-[16px] text-white">Gör en intresseanmälan</button>
+                <!-- borgir -->
+                <div class="bg-slate-500 rounded cursor-pointer p-2 h-[40px] w-[50px] flex flex-col justify-between tablet:hidden">
+                    <span class="w-full bg-white h-[2px] rounded block"></span>
+                    <span class="w-full bg-white h-[2px] rounded block"></span>
+                    <span class="w-full bg-white h-[2px] rounded block"></span>
+                </div>
         </nav>
     </div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
@@ -34,7 +41,7 @@
         <div class="max-w-[700px] w-full mx-auto my-4">
             <p class="mb-2">Här nedan kan du ser mer om vilka projekt vi har gjort. Håll musen över någon av bilderna och klicka för att läsa mer!</p>
         </div>
-        <section class="image-transition grid grid-cols-4 mt-14 cursor-none gap-1">
+        <section class="image-transition grid grid-cols-[repeat(auto-fill,_minmax(293px,_1fr))] place-content-center mt-14 cursor-none gap-1">
             <img src="https://images.unsplash.com/photo-1655300283246-1ef0317a565d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" alt="Djupedalsäng" class="aspect-square image">
             <img src="https://images.unsplash.com/photo-1655300283246-1ef0317a565d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" alt="Hönekulla" class="aspect-square image">
             <img src="https://images.unsplash.com/photo-1655300283246-1ef0317a565d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" alt="Mölnlycke" class="aspect-square image">
@@ -59,22 +66,22 @@
         </div>
     </article>
     
-    <footer class="h-[300px] w-full bg-[#222] text-[#ccc] py-10">
-        <article class="max-w-[1000px] w-full h-full mx-auto flex justify-between">
-            <section class="flex">
-                <div class="max-w-[200px] h-full flex flex-col justify-between mr-10">
+    <footer class="w-full bg-[#222] text-[#ccc] p-2 tablet:p-10">
+        <article class="max-w-[1000px] w-full h-full mx-auto flex flex-col justify-between tablet:flex-row">
+            <section class="flex flex-col tablet:flex-row tablet:items-start items-center">
+                <div class="max-w-[200px] h-full flex flex-col justify-between tablet:mr-10 my-4 text-center">
                     <a href="index.html">
                         <img src="./header-logo.png" alt="Solklart logo" class="w-full">
                     </a>
                     <p>Din kundvänliga installatör av solceller i Västsverige.</p>
                 </div>
-                <div class="font-mono tracking-wider flex flex-col">
+                <div class="font-mono tracking-wider flex flex-col tablet:items-start items-center">
                     <a href="index.html" class="underline py-1">Hem</a>
                     <a href="referenser.html" class="underline py-1">Solceller</a>
                     <p class="cursor-pointer underline py-1">Om oss</p>
                 </div>
             </section>
-            <section class="flex flex-col justify-between text-right">
+            <section class="flex flex-col justify-between tablet:mt-0 mt-16 tablet:text-right text-center text-[14px]">
                 <div>
                     <p>hej@soltjanst.se</p>
                     <p>031-36 35 780</p>
@@ -89,7 +96,7 @@
             </section>
         </article>
     </footer>
-    <p class="bg-[#222] text-center pt-10 pb-3 text-[#666]">En del av MW El & Montage<br></p>
+    <p class="bg-[#222] text-[14px] text-center pt-10 pb-3 text-[#666]">En del av MW El & Montage<br></p>
     <script>
         document.querySelector('.image-transition').addEventListener('mousemove', e => {
             document.querySelector('.test').style.top = e.pageY + 'px';
